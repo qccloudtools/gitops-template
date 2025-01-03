@@ -19,17 +19,21 @@ module "gke" {
   deletion_protection = false
 
   // External availability
-  enable_private_endpoint = false
+  // enable_private_endpoint = false
+  enable_private_endpoint = true
   enable_private_nodes    = true
 
   // Service Account
-  create_service_account = true
+  // create_service_account = true
+  create_service_account = false
 
   // Networking
   network           = var.network
   subnetwork        = var.subnetwork
-  ip_range_pods     = "${var.subnetwork}-gke-01-pods"
-  ip_range_services = "${var.subnetwork}-gke-01-services"
+  // ip_range_pods     = "${var.subnetwork}-gke-01-pods"
+  ip_range_pods     = "pods"
+  // ip_range_services = "${var.subnetwork}-gke-01-services"
+  ip_range_services = "svcs"
 
   // Addons
   dns_cache                  = true
@@ -39,6 +43,7 @@ module "gke" {
   horizontal_pod_autoscaling = false
   http_load_balancing        = false
   network_policy             = false
+
 
   // Node Pools
   node_pools = [

@@ -17,7 +17,7 @@ data "google_iam_role" "dns_admin" {
 }
 
 data "google_iam_role" "owner" {
-  name = "roles/owner"
+  name = "roles/editor"
 }
 
 data "google_iam_role" "secretmanager_secretaccessor" {

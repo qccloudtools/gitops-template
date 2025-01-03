@@ -13,7 +13,15 @@ variable "network_name" {
   description = "The name of the created network."
   type        = string
 
-  default = "kubefirst"
+  # default = "kubefirst"
+  default = "gke-shared-1"
+}
+
+variable "subnetwork" {
+  description = "The name of the subnet network."
+  type        = string
+
+  default = "gke-p4-usw1"
 }
 
 variable "project" {
