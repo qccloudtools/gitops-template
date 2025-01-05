@@ -43,7 +43,7 @@ module "gke" {
   horizontal_pod_autoscaling = false
   http_load_balancing        = false
   network_policy             = false
-
+  default_max_pods_per_node  = "32"
 
   // Node Pools
   node_pools = [
@@ -58,7 +58,7 @@ module "gke" {
       max_count = tonumber("<NODE_COUNT>") # tonumber() is used for a string token value
       // PER ZONE
       initial_node_count = tonumber("<NODE_COUNT>") # tonumber() is used for a string token value
-
+      service_account = "kubefirst-mgmt-sa@gke-cloudteam.iam.gserviceaccount.com"
       local_ssd_count = 0
       spot            = false
       disk_size_gb    = 100

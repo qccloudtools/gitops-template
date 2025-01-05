@@ -14,14 +14,14 @@ variable "network_name" {
   type        = string
 
   # default = "kubefirst"
-  default = "gke-shared-1"
+  default = "projects/k8saas-host1/global/networks/gke-shared-1"
 }
 
 variable "subnetwork" {
   description = "The name of the subnet network."
   type        = string
 
-  default = "gke-p4-usw1"
+  default = "projects/k8saas-host1/regions/us-west1/subnetworks/gke-p4-usw1"
 }
 
 variable "project" {

@@ -19,7 +19,7 @@ variable "network" {
   description = "The network to use with the cluster."
   type        = string
 
-  default = "gke-shared-1"
+  default = "projects/k8saas-host1/global/networks/gke-shared-1"
 }
 
 variable "project" {
@@ -31,5 +31,5 @@ variable "subnetwork" {
   description = "The subnetwork to use with the cluster."
   type        = string
 
-  default = "gke-p4-usw1"
+  default = "projects/k8saas-host1/regions/us-west1/subnetworks/gke-p4-usw1"
 }
