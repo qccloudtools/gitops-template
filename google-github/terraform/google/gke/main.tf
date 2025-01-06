@@ -28,8 +28,10 @@ module "gke" {
   create_service_account = false
 
   // Networking
-  network           = var.network
-  subnetwork        = var.subnetwork
+  # network           = var.network
+  network           = "projects/k8saas-host1/global/networks/gke-shared-1"
+  # subnetwork        = var.subnetwork
+  subnetwork        = "projects/k8saas-host1/regions/us-west1/subnetworks/gke-p4-usw1"
   // ip_range_pods     = "${var.subnetwork}-gke-01-pods"
   ip_range_pods     = "pods"
   // ip_range_services = "${var.subnetwork}-gke-01-services"
