@@ -6,7 +6,7 @@ module "gke" {
   project       = var.project
 
   # network    = module.vpc.network_name
-  # network    = var.network_name
+  network    = var.network_name
   # subnetwork = lookup(module.vpc.subnets, "${var.google_region}/subnet-01-${local.cluster_name}").name
-  # subnetwork = var.subnetwork
+  subnetwork = var.subnetwork
 }

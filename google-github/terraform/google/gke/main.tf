@@ -13,6 +13,7 @@ module "gke" {
 
   name            = var.cluster_name
   project_id      = var.project
+  zones           = "<CLOUD_ZONE>"
   region          = var.google_region
   release_channel = "STABLE"
 
@@ -29,10 +30,8 @@ module "gke" {
 
   // Networking
   network_project_id = "k8saas-host1"
-  # network           = var.network
-  network           = "projects/k8saas-host1/global/networks/gke-shared-1"
-  # subnetwork        = var.subnetwork
-  subnetwork        = "projects/k8saas-host1/regions/us-west1/subnetworks/gke-p4-usw1"
+  network           = var.network
+  subnetwork        = var.subnetwork
   // ip_range_pods     = "${var.subnetwork}-gke-01-pods"
   ip_range_pods     = "pods"
   // ip_range_services = "${var.subnetwork}-gke-01-services"
