@@ -1,5 +1,5 @@
-module "services" {
-  source = "./services"
+# module "services" {
+#   source = "./services"
 
-  project = var.project
-}
+#   project = var.project
+# }
