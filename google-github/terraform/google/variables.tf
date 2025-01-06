@@ -9,20 +9,20 @@ variable "google_region" {
   default = "<CLOUD_REGION>"
 }
 
-variable "network_name" {
-  description = "The name of the created network."
-  type        = string
+# variable "network_name" {
+#   description = "The name of the created network."
+#   type        = string
 
-  # default = "kubefirst"
-  default = "projects/k8saas-host1/global/networks/gke-shared-1"
-}
+#   # default = "kubefirst"
+#   default = "projects/k8saas-host1/global/networks/gke-shared-1"
+# }
 
-variable "subnetwork" {
-  description = "The name of the subnet network."
-  type        = string
+# variable "subnetwork" {
+#   description = "The name of the subnet network."
+#   type        = string
 
-  default = "projects/k8saas-host1/regions/us-west1/subnetworks/gke-p4-usw1"
-}
+#   default = "projects/k8saas-host1/regions/us-west1/subnetworks/gke-p4-usw1"
+# }
 
 variable "project" {
   description = "Google Project ID"
