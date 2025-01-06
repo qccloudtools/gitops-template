@@ -13,7 +13,7 @@ module "gke" {
 
   name            = var.cluster_name
   project_id      = var.project
-  zones           = "<CLOUD_ZONE>"
+  zones           = var.zone
   region          = var.google_region
   release_channel = "STABLE"
 
