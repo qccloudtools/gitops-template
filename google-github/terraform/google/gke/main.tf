@@ -28,6 +28,7 @@ module "gke" {
   create_service_account = false
 
   // Networking
+  network_project_id = "k8saas-host1"
   # network           = var.network
   network           = "projects/k8saas-host1/global/networks/gke-shared-1"
   # subnetwork        = var.subnetwork
