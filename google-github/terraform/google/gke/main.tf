@@ -13,8 +13,8 @@ module "gke" {
 
   name            = var.cluster_name
   project_id      = var.project
-  zones           = [ var.zone ]
-  regional        = false
+  zones           = [ var.zones ]
+  regional        = true
   region          = var.google_region
   release_channel = "STABLE"
 

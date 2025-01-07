@@ -34,9 +34,9 @@ variable "subnetwork" {
   default = "gke-p4-usw1"
 }
 
-variable "zone" {
+variable "zones" {
   description = "The zoneal cluster location."
   type        = string
 
-  default = "us-west1-a"
+  default = "us-west1-a,us-west1-b"
 }
