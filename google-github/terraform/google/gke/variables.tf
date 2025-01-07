@@ -36,7 +36,7 @@ variable "subnetwork" {
 
 variable "zones" {
   description = "The zoneal cluster location."
-  type        = string
+  type        = list
 
-  default = "us-west1-a,us-west1-b"
+  default = [ "us-west1-a" ]
 }

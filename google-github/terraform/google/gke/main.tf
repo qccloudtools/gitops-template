@@ -17,22 +17,22 @@ module "gke" {
   regional        = true
   region          = var.google_region
   release_channel = "STABLE"
-
+  master_authorized_networks = ["172.16.0.0/12", "10.0.0.0/8"]
   deletion_protection = false
 
   // External availability
   // enable_private_endpoint = false
   enable_private_endpoint = true
   enable_private_nodes    = true
-
   // Service Account
   // create_service_account = true
   create_service_account = false
 
   // Networking
   network_project_id = "k8saas-host1"
-  network           = var.network
-  subnetwork        = var.subnetwork
+  network           = "gke-shared-1"
+  subnetwork        = "gke-p4-usw1"
+  master_ipv4_cidr_block = "10.196.217.0/28"
   // ip_range_pods     = "${var.subnetwork}-gke-01-pods"
   ip_range_pods     = "pods"
   // ip_range_services = "${var.subnetwork}-gke-01-services"
