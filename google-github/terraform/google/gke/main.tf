@@ -55,7 +55,7 @@ module "gke" {
   horizontal_pod_autoscaling = false
   http_load_balancing        = false
   network_policy             = false
-  default_max_pods_per_node  = "16"
+  default_max_pods_per_node  = "32"
 
   // Node Pools
   node_pools = [
