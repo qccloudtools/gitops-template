@@ -43,6 +43,7 @@ module "gke" {
   master_ipv4_cidr_block = "10.196.217.0/28"
   // ip_range_pods     = "${var.subnetwork}-gke-01-pods"
   ip_range_pods     = "pods"
+  additional_ip_range_pods = ["pods2"]
   // ip_range_services = "${var.subnetwork}-gke-01-services"
   ip_range_services = "svcs"
 
