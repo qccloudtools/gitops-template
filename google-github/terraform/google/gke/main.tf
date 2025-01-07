@@ -65,11 +65,11 @@ module "gke" {
 
       // Autoscaling
       // PER ZONE
-      min_count = tonumber("<NODE_COUNT>") # tonumber() is used for a string token value
+      min_count = 1 #tonumber("1") # tonumber() is used for a string token value
       // PER ZONE
       max_count = tonumber("<NODE_COUNT>") # tonumber() is used for a string token value
       // PER ZONE
-      initial_node_count = tonumber("<NODE_COUNT>") # tonumber() is used for a string token value
+      initial_node_count = 1 #tonumber("<NODE_COUNT>") # tonumber() is used for a string token value
       service_account = "kubefirst-mgmt-sa@gke-cloudteam.iam.gserviceaccount.com"
       local_ssd_count = 0
       spot            = false
