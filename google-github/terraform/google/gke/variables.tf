@@ -38,5 +38,5 @@ variable "zones" {
   description = "The zoneal cluster location."
   type        = list
 
-  default = [ "us-west1-a" ]
+  default = [ "us-west1-a", "us-west1-b" ]
 }

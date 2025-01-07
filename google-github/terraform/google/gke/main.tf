@@ -13,11 +13,19 @@ module "gke" {
 
   name            = var.cluster_name
   project_id      = var.project
-  zones           = [ var.zones ]
+  zones           = var.zones
   regional        = true
   region          = var.google_region
   release_channel = "STABLE"
-  master_authorized_networks = ["172.16.0.0/12", "10.0.0.0/8"]
+  master_authorized_networks = [   {
+        cidr_block   = "172.16.0.0/12"
+        display_name = "priv-172"
+      },
+      {
+        cidr_block   = "10.0.0.0/8"
+        display_name = "priv-10"
+      },
+    ]
   deletion_protection = false
 
   // External availability
@@ -46,7 +54,7 @@ module "gke" {
   horizontal_pod_autoscaling = false
   http_load_balancing        = false
   network_policy             = false
-  default_max_pods_per_node  = "32"
+  default_max_pods_per_node  = "16"
 
   // Node Pools
   node_pools = [
