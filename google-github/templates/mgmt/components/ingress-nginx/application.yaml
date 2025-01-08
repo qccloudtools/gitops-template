@@ -19,6 +19,9 @@ spec:
             enabled: true
           extraArgs:
             enable-ssl-passthrough: true
+          service:
+            annotations:
+              networking.gke.io/load-balancer-type: "Internal"
     chart: ingress-nginx
   destination:
     server: https://kubernetes.default.svc
