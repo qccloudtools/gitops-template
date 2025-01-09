@@ -19,6 +19,7 @@ spec:
             enabled: true
           extraArgs:
             enable-ssl-passthrough: true
+            default-ssl-certificate: "ingress-nginx/p1-gke-drekar.qualcomm.com"
           service:
             annotations:
               networking.gke.io/load-balancer-type: "Internal"
