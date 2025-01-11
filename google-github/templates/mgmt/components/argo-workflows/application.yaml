@@ -30,7 +30,7 @@ spec:
               iam.gke.io/gcp-service-account: argo-server-<CLUSTER_NAME>@<GOOGLE_PROJECT>.iam.gserviceaccount.com
           extraArgs:
           - --auth-mode=client
-          # - --auth-mode=sso
+          - --auth-mode=sso
           ingress:
             enabled: true
             ingressClassName: nginx
@@ -50,24 +50,24 @@ spec:
               # - secretName: argo-tls
               - hosts:
                   - argo.<DOMAIN_NAME>
-          # sso:
-          #   issuer: https://vault.<DOMAIN_NAME>/v1/identity/oidc/provider/kubefirst
-          #   clientId:
-          #     name: argo-secrets
-          #     key: client-id
-          #   clientSecret:
-          #     name: argo-secrets
-          #     key: client-secret
-          #   redirectUrl: https://argo.<DOMAIN_NAME>/oauth2/callback
-          #   scopes:
-          #     - email
-          #     - openid
-          #     - groups
-          #     - user
-          #     - profile
-          #   # RBAC Config. >= v2.12
-          #   rbac:
-          #     enabled: true
+          sso:
+            issuer: https://accounts.google.com
+            clientId:
+              name: argo-secrets
+              key: client-id
+            clientSecret:
+              name: argo-secrets
+              key: client-secret
+            redirectUrl: https://argo.<DOMAIN_NAME>/oauth2/callback
+            scopes:
+              - email
+              - openid
+              # - groups
+              - user
+              - profile
+            # RBAC Config. >= v2.12
+            rbac:
+              enabled: true
         useDefaultArtifactRepo: true
         useStaticCredentials: true
         artifactRepository:
