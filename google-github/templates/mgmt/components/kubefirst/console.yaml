@@ -41,18 +41,22 @@ spec:
             enabled: "true"
             className: nginx
             annotations:
-              <CERT_MANAGER_ISSUER_ANNOTATION_1>
-              <CERT_MANAGER_ISSUER_ANNOTATION_2>
-              <CERT_MANAGER_ISSUER_ANNOTATION_3>
-              <CERT_MANAGER_ISSUER_ANNOTATION_4>
+              nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+              nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+              nginx.ingress.kubernetes.io/service-upstream: "true"
+
+              # <CERT_MANAGER_ISSUER_ANNOTATION_1>
+              # <CERT_MANAGER_ISSUER_ANNOTATION_2>
+              # <CERT_MANAGER_ISSUER_ANNOTATION_3>
+              # <CERT_MANAGER_ISSUER_ANNOTATION_4>
             hosts:
               - host: kubefirst.<DOMAIN_NAME>
                 paths:
                   - path: /
                     pathType: Prefix
             tls:
-              - secretName: kubefirst-tls
-                hosts:
+              # - secretName: kubefirst-tls
+              - hosts:
                   - kubefirst.<DOMAIN_NAME>
   destination:
     name: in-cluster
