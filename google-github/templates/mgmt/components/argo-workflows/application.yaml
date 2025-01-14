@@ -53,17 +53,17 @@ spec:
           sso:
             issuer: https://accounts.google.com
             clientId:
-              name: argo-secrets
+              name: oidc-secrets
               key: client-id
             clientSecret:
-              name: argo-secrets
+              name: oidc-secrets
               key: client-secret
             redirectUrl: https://argo.<DOMAIN_NAME>/oauth2/callback
             scopes:
               - email
               - openid
               # - groups
-              - user
+              # - user
               - profile
             # RBAC Config. >= v2.12
             rbac:
